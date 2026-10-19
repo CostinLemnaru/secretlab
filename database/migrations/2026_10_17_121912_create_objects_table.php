@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('objects', function (Blueprint $table): void {
             $table->id();
-            $table->string('key', 255)->collation('utf8mb4_bin');
-            $table->json('value');
+            $table->string('key', 255);
+            $table->json('value')->nullable();
             $table->unsignedBigInteger('timestamp');
 
             $table->index(['key', 'timestamp', 'id']);
