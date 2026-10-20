@@ -15,6 +15,24 @@ docker compose up -d
 docker compose exec app php artisan migrate
 ```
 
+## Tests
+
 ```sh
 docker compose exec app php artisan test
+docker compose exec app php artisan test --coverage
 ```
+
+## API
+
+Local URL: `http://localhost:8000`. Use `Content-Type: application/json` and `Accept: application/json`.
+
+| Method | Path | Description |
+| --- | --- | --- |
+| POST | `/object` | Save a value, e.g. `{"mykey":"value1"}`. |
+| GET | `/object/mykey` | Get the latest value. |
+| GET | `/object/mykey?timestamp=1440568980` | Get the value at or before a UNIX timestamp (UTC). |
+| GET | `/object/get_all_records` | Get all saved versions. |
+
+## AI usage
+
+AI was used to help write the code and tests.
