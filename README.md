@@ -24,6 +24,8 @@ docker compose exec app php artisan test --coverage
 
 ## API
 
+Live URL: https://secretlab-production.up.railway.app
+
 Local URL: `http://localhost:8000`. Use `Content-Type: application/json` and `Accept: application/json`.
 
 | Method | Path | Description |
