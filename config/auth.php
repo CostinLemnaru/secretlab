@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\User;
-
 return [
 
     /*
@@ -27,7 +25,7 @@ return [
     |
     | Next, you may define every authentication guard for your application.
     | Of course, a great default configuration has been defined for you
-    | which utilizes session storage plus the Eloquent user provider.
+    | which utilizes session storage plus the database user provider.
     |
     | All authentication guards have a user provider, which defines how the
     | users are actually retrieved out of your database or other storage
@@ -63,14 +61,9 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', User::class),
+            'driver' => 'database',
+            'table' => 'users',
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

@@ -2,4 +2,6 @@ FROM laravelsail/php84-composer:latest
 
 RUN docker-php-ext-install pdo_mysql
 
+RUN pecl install pcov && docker-php-ext-enable pcov
+
 WORKDIR /app
